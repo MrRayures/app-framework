@@ -1,0 +1,28 @@
+{
+    "label": "Couleurs",
+    "status": null,
+    "context": {},
+    "variants": [
+        {
+            "name": "default",
+            "label": "Primitives",
+            "context": {
+                "colors": [
+                    {"name": "primary", "hex": "#333333"},
+                    {"name": "secondary", "hex": "#999999"},
+                    {"name": "text", "hex": "#000000"}
+                ]
+            }
+        },
+        {
+            "name": "neutral",
+            "label": "Neutral",
+            "context": {
+                "colors": [
+                    {"name": "neutral-100", "hex": "#F5F5F5"},
+                    {"name": "neutral-200", "hex": "#E6E6E7"}
+                ]
+            }
+        }
+    ]
+}

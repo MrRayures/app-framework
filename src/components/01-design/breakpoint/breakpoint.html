@@ -1,0 +1,17 @@
+<table class="sg-bpTable">
+    <thead>
+        <th>Breakpoint</th>
+        <th>Class infix</th>
+        <th>Dimensions</th>
+    </thead>
+    <tbody>
+        {% for bp in breakpoint  %}
+            <tr>
+                <td>{{bp.desc}}</th>
+                <td><code class="sg-text-code">{{bp.name}}</code></td>
+                <td>≥&nbsp;{{bp.value}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
