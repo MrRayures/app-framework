@@ -1,0 +1,111 @@
+/*
+* Injury treat
+*/
+
+.c-injuryTreat {
+    --injuryTitleHeight: 4rem;
+}
+
+.c-injuryTreat__list {
+}
+
+.c-injuryTreat__listItem {
+    margin-bottom: 2.4rem;
+    padding: 0 calc(var(--injuryTitleHeight) + 1rem);
+    position: relative;
+
+    &.active {
+        .c-injuryTreat__title {
+            font-weight: 600;
+        }
+
+        .c-injuryTreat__percent,
+        .c-injuryTreat__progress,
+        .c-injuryTreat__content {
+            display: block;
+        }
+    }
+
+    &.done {
+        opacity: 0.6;
+
+        &:after {
+            content: '';
+            display: block;
+            width: var(--injuryTitleHeight);
+            height: var(--injuryTitleHeight);
+            background-color: white;
+            background-image: url('../icons/check.svg');
+            background-position: center;
+            background-size: 2.4rem auto;
+            background-repeat: no-repeat;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        .c-injuryTreat__progress {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
+.c-injuryTreat__marker {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--injuryTitleHeight);
+    height: var(--injuryTitleHeight);
+    background-color: white;
+    color: black;
+    font-size: 1.6rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.c-injuryTreat__title {
+    min-height: var(--injuryTitleHeight);
+    padding: 0 1.6rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 400;
+    font-size: 2rem;
+    border: 1px solid white;
+
+    p {
+        color: white;
+        mix-blend-mode: difference;
+    }
+}
+
+.c-injuryTreat__progress {
+    background-color: white;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: width 50ms linear;
+    display: none;
+}
+
+.c-injuryTreat__percent {
+    font-weight: 400;
+    color: white;
+    mix-blend-mode: difference;
+    display: none;
+}
+
+.c-injuryTreat__content {
+    padding: 1rem 1.6rem;
+    display: none;
+
+    .c-button {
+        margin-top: 1.6rem;
+        max-width: 25rem;
+        width: 100%;
+    }
+}

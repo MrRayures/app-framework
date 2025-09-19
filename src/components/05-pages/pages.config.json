@@ -14,29 +14,26 @@
                 "fileName": "exemple"
             },
             {
-                "label": "Homepage",
+                "label": "APP medic",
                 "folder": true,
-                "id": "hp",
+                "id": "medic",
                 "list": [
-                    {"label": "01.a Homepage", "fileName": "01a_homepage"},
-                    {"label": "01.b Homepage - connecté", "fileName": "01b_homepage"}
-                ]
-            },
-            {
-                "label": "Catalogue",
-                "subfolder": true,
-                "id":"ca",
-                "list": [
+                    { "label": "Accueil", "fileName": "app-index" },
+                    { "label": "Nouvelle partie", "fileName": "game-add" },
+                    { "label": "Charger une partie", "fileName": "game-list" },
+                    { "label": "Options", "fileName": "app-settings" },
+
+                    { "label": "Partie : options", "fileName": "game-settings" },
+                    { "label": "Partie : stats", "fileName": "game-stats" },
+                    { "label": "Partie : start", "fileName": "game-start" },
                     {
-                        
-                        "label": "Descente produit",
-                        "id": "dp",
-                        "folder": true,
-                        "list": [
-                            {"label": "02.a Descente produit", "fileName": "02a_dp"},
-                            {"label": "02.b Descente produit - filtre", "fileName": "02b_dp"}
-                        ]
-                    }
+                        "label": "Partie : localisation blessure",
+                        "fileName": "game-injury-localisation"
+                    },
+                    { "label": "Partie : protection ?", "fileName": "game-injury-protection" },
+                    { "label": "Partie : diagnostique", "fileName": "game-injury-check" },
+                    { "label": "Partie : soin", "fileName": "game-injury-treat" },
+                    { "label": "Partie : terminé", "fileName": "game-end" }
                 ]
             }
         ]

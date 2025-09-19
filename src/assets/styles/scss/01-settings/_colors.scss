@@ -1,0 +1,16 @@
+/*
+* Variables couleurs
+*/
+
+:root {
+    --primary: #ffffff;
+    --bg: #111;
+    --text: var(--primary);
+    --title: var(--primary);
+}
+
+$colors: ('primary', 'secondary', 'text', 'title');
+
+$bgColors: ('primary');
+
+$borderColors: ('primary');

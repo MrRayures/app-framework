@@ -1,0 +1,29 @@
+{
+    "trailingComma": "all",
+    "tabWidth": 4,
+    "semi": true,
+    "singleQuote": true,
+    "printWidth": 100,
+    "plugins": ["prettier-plugin-jinja-template"],
+    "overrides": [
+        {
+            "files": ["*.scss"],
+            "options": {
+                "tabWidth": 4
+            }
+        },
+        {
+            "files": ["*.njk", "*.html"],
+            "options": {
+                "parser": "jinja-template",
+                "tabWidth": 4
+            }
+        },
+        {
+            "files": ["*.json"],
+            "options": {
+                "tabWidth": 4
+            }
+        }
+    ]
+}

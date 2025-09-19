@@ -2,21 +2,45 @@
   [utilities:font]
 -------------------------------------------------------------------------------------------------------*/
 
-// Family
+/*
+* Font-family
+*/
+@each $font, $value in $fontFamily {
+    .u-font-#{$font} {
+        font-family:
+            #{$value},
+            'sans-serif' !important;
+    }
+}
 
+.u-font-secondary {
+    font-weight: 400 !important;
+}
 
-// Size
+/*
+* Font-size
+*/
+@each $font, $value in $fontSizes {
+    .u-font-#{$font} {
+        font-size: #{$value} !important;
+    }
+}
 
+@each $bp, $bp_value in $breakpoints {
+    @include mq(max, bp(#{$bp})) {
+        @each $font, $value in $fontSizes {
+            .u-font-#{$font} {
+                font-size: #{$value} !important;
+            }
+        }
+    }
+}
 
-// Weight
-
-
-
-// Classes responsive si besoin
-// @each $bp , $bp_value in $breakpoints {
-//   @include mq(#{$bp_value}) {
-// 		@each $size , $size_value in $font-sizes {
-// 			
-// 		}
-// 	}
-// }
+/*
+* Font-weight
+*/
+@each $weight, $value in $fontWeight {
+    .u-font-#{$weight} {
+        font-weight: #{$value} !important;
+    }
+}

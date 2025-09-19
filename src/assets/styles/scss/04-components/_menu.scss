@@ -1,0 +1,43 @@
+/*
+* Menu
+*/
+.c-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--bg);
+    z-index: var(--zindex-fixed);
+
+    @media (orientation: landscape) {
+        left: var(--headerSize);
+    }
+
+    @media (orientation: portrait) {
+        top: var(--headerSize);
+    }
+
+    &.active {
+        display: block;
+    }
+}
+
+.c-menu__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.c-menu__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+
+    .c-button {
+        width: 100%;
+        max-width: 40rem;
+    }
+}

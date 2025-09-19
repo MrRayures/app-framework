@@ -4,21 +4,20 @@
 /*
 * Svg icons
 */
-[class*="c-icon-svg"]{
-    --iconSize: 24px;
+[class*='c-icon-svg'] {
     fill: currentColor;
     width: var(--iconSize);
     height: var(--iconSize);
+    display: block;
 }
- 
-
 
 /*
 * inline icons width CSS
 */
-[class*="c-icon-"] {
+[class*='c-icon-'] {
     position: relative;
-    --iconSize: 24px;
+    --iconSize: 2.4rem;
+
     &:before,
     &:after {
         background-color: currentColor;
@@ -28,42 +27,36 @@
         mask-size: 100%;
         pointer-events: none;
         display: inline-block;
-        vertical-align: calc((0.75em - var(--iconSize))*.5);
+        vertical-align: calc((0.75em - var(--iconSize)) * 0.5);
+        flex-shrink: 0;
     }
 }
-
-// Icons list
-$icons: "chevron-bas", 
-        "chevron-droite",
-        "chevron-gauche",
-        "chevron-haut";
 
 @each $icon in $icons {
     .c-icon-#{$icon} {
         &:before,
         &:after {
-            //-webkit-mask-image: url("../../icons/#{$icon}.svg");
-            mask-image: url("../icons/#{$icon}.svg");
+            -webkit-mask-image: url('../icons/#{$icon}.svg');
+            mask-image: url('../icons/#{$icon}.svg');
         }
     }
 }
 
+@each $size, $val in $iconsSize {
+    .c-icon--#{$size} {
+        --iconSize: #{$val};
+    }
+}
 
 // Position
 .c-icon--left {
     &:before {
-        content: "";
+        content: '';
     }
 }
+
 .c-icon--right {
     &:after {
-        content: "";
+        content: '';
     }
 }
-
-
-
-// Size
-.c-icon--16 {--iconSize: 16px;}
-.c-icon--32 {--iconSize: 32px;}
-

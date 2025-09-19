@@ -5,14 +5,15 @@
 /*
 * Visibility
 */
-
 .u-block { display: block!important;}
 .u-none {display: none!important;}
 .u-inline {display: inline!important;}
 .u-inline-block {display: inline-block!important;vertical-align: top!important;}
+.u-flex { display: flex!important;}
+.u-inline-flex { display: inline-flex!important;}
 
 @each $bp , $bp_value in $breakpoints {
-    @include mq(max, #{$bp_value}) {
+    @include mq(max, bp(#{$bp})) {
         .u-block\@#{$bp} { display: block!important;}
         .u-none\@#{$bp} {display: none!important;}
         .u-inline\@#{$bp} {display: inline!important;}

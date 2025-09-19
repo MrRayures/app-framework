@@ -1,16 +1,14 @@
-/*-----------------------------------------------------------------------------------------------------
-  [component:input]
--------------------------------------------------------------------------------------------------------*/
+/*
+* Input
+*/
 
-.c-form-input {
-  border-color: #FF0000;
-	&:focus {}
+.c-input {
+    --inputHeight: 4rem;
+
+    width: 100%;
+    padding: 1.6rem;
+    height: var(--inputHeight);
+    font-size: 1.6rem;
+    color: black;
+    border: 1px solid white;
 }
-
-
-
-
-
-
-
-

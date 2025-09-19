@@ -2,8 +2,29 @@
 * Outline pour focus-visible
 */
 @mixin accessible_outline {
-  outline: 2px dotted var(--primary);
-  outline-offset: 0.2rem;
+    --focusOutlineColor: white;
+
+    outline: 2px dotted var(--focusOutlineColor);
+    outline-offset: 0.4rem;
+}
+
+@mixin sr-only {
+    clip: rect(0 0 0 0);
+    clip: path(inset 100%);
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+}
+
+@mixin corner($size) {
+    --s: #{$size}rem; /* size of the corners */
+    border: 1px solid #fff;
+    mask:
+        conic-gradient(#000 0 0) content-box,
+        conic-gradient(at var(--s) var(--s), #0000 75%, #000 0) 0 0 / calc(100% - var(--s))
+            calc(100% - var(--s));
 }
 
 /*
@@ -24,23 +45,22 @@
 * > @media only screen and (min-width: 960.2px) and (max-width: 1280px) {}
 */
 
-@mixin mq($scope, $breakpoint, $breakpointMax: "") {
-  @if $scope==max {
-    @media only screen and (max-width: ($breakpoint)) { 
-      @content;
+@mixin mq($scope, $breakpoint, $breakpointMax: '') {
+    @if $scope==max {
+        @media only screen and (max-width: ($breakpoint)) {
+            @content;
+        }
     }
-  }
 
-  @if $scope==min {
-    @media only screen and (min-width: ($breakpoint + 0.2px)) { 
-      @content;
+    @if $scope==min {
+        @media only screen and (min-width: ($breakpoint + 0.2px)) {
+            @content;
+        }
     }
-  }
 
-  @if $scope==minmax {
-    @media only screen and (min-width: ($breakpoint + 0.2px)) and (max-width: $breakpointMax){ 
-      @content;
+    @if $scope==minmax {
+        @media only screen and (min-width: ($breakpoint + 0.2px)) and (max-width: $breakpointMax) {
+            @content;
+        }
     }
-  }
-
 }

@@ -1,0 +1,23 @@
+/*
+* Injury treat
+*/
+
+.c-injury {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.6rem;
+    padding: 0.4rem 2.4rem 0.4rem 1rem;
+    border: 1px solid white;
+
+    @include corner(1.2);
+
+    [class*='c-icon-'] {
+        --iconSize: 4rem;
+    }
+}
+
+.c-injury__title {
+    font-size: 3.2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}

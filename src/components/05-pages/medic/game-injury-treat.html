@@ -1,0 +1,143 @@
+{% extends "components/_templates/layout.html" %}
+
+<!-- //START page variables -->
+{% set page_title = "Le patient soufre d'une fracture" %}
+{% set body_class = "" %}
+{% set content_class = "c-content--page" %}
+
+{% set header = { show: true } %}
+<!-- //END page variables -->
+
+<!-- //START page Content -->
+{% block page_content %}
+    <h1 class="c-title">Le patient soufre d'une :</h1>
+
+    <div class="c-injury">
+        <span class="c-icon-close c-icon--left"></span>
+        <p class="c-injury__title">Fracture</p>
+    </div>
+
+    <p class="c-subtitle">Procéder au(x) soin(s) suivant(s) :</p>
+
+    <form class="c-injuryTreat" action="{{ 'game-end' | path }}">
+        <ul class="c-injuryTreat__list">
+            <li class="c-injuryTreat__listItem">
+                <span class="c-injuryTreat__marker">1</span>
+                <h2 class="c-injuryTreat__title">
+                    <span id="progress" class="c-injuryTreat__progress"></span>
+                    <p>Immobilisation</p>
+                    <span id="percent" class="c-injuryTreat__percent"></span>
+                </h2>
+                <div class="c-injuryTreat__content">
+                    <p>Immobilliser le membre fracturé avec un bandage</p>
+                    <button
+                        type="button"
+                        class="c-button c-button--primary c-injuryTreat__button"
+                        disabled
+                    >
+                        Etape suivante
+                    </button>
+                </div>
+            </li>
+            <li class="c-injuryTreat__listItem">
+                <span class="c-injuryTreat__marker">2</span>
+                <h2 class="c-injuryTreat__title">
+                    <span class="c-injuryTreat__progress"></span>
+                    <p>Analgésique</p>
+                    <span class="c-injuryTreat__percent"></span>
+                </h2>
+                <div class="c-injuryTreat__content">
+                    <p>Injecter l’analgèsique</p>
+                    <button
+                        type="button"
+                        class="c-button c-button--primary c-injuryTreat__button"
+                        disabled
+                    >
+                        Etape suivante
+                    </button>
+                </div>
+            </li>
+            <li class="c-injuryTreat__listItem">
+                <span class="c-injuryTreat__marker">3</span>
+                <h2 class="c-injuryTreat__title">
+                    <span class="c-injuryTreat__progress"></span>
+                    <p>Atelle</p>
+                    <span class="c-injuryTreat__percent"></span>
+                </h2>
+                <div class="c-injuryTreat__content">
+                    <p>Poser une attelle</p>
+                    <button
+                        type="submit"
+                        class="c-button c-button--primary c-injuryTreat__button"
+                        disabled
+                    >
+                        Terminer
+                    </button>
+                </div>
+            </li>
+        </ul>
+    </form>
+    <br /><br /><br />
+{% endblock %}
+<!-- //END page Content -->
+
+<!-- Custom JS -->
+{% block custom_js %}
+    <script>
+        /*
+         * Treat injury
+         */
+
+        const treatSteps = document.querySelectorAll('.c-injuryTreat__listItem');
+
+        // Active first step
+        treatSteps[0].classList.add('active');
+        startProgress(treatSteps[0], 1);
+
+        // Next step
+        const buttons = document.querySelectorAll('.c-injuryTreat__button');
+
+        buttons.forEach((button) => {
+            button.addEventListener('click', () => {
+                const parentStep = button.closest('.c-injuryTreat__listItem');
+
+                if (parentStep && parentStep.classList.contains('active')) {
+                    const nextStep = parentStep.nextElementSibling;
+
+                    if (nextStep && nextStep.classList.contains('c-injuryTreat__listItem')) {
+                        parentStep.classList.remove('active');
+                        parentStep.classList.add('done');
+                        nextStep.classList.add('active');
+
+                        startProgress(nextStep, 1);
+                    } else {
+                        console.log('This is the last item, no next sibling.');
+                    }
+                }
+            });
+        });
+
+        // Progress function
+        function startProgress(item, duration) {
+            const progress = item.querySelector('.c-injuryTreat__progress');
+            const progress_percent = item.querySelector('.c-injuryTreat__percent');
+            const button = item.querySelector('.c-injuryTreat__button');
+
+            const interval = 100; // ms
+            const steps = (duration * 1000) / interval;
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current++;
+                const percent = (current / steps) * 100;
+                progress.style.width = percent + '%';
+                progress_percent.textContent = Math.floor(percent) + '%';
+
+                if (current >= steps) {
+                    clearInterval(timer);
+                    button.disabled = false;
+                }
+            }, interval);
+        }
+    </script>
+{% endblock %}
