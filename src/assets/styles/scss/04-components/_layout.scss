@@ -1,9 +1,15 @@
 /*
 * Layout
 */
+body {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+}
 
 .c-layout {
     display: flex;
+    width: 100%;
 
     @media (orientation: landscape) {
         flex-direction: row;

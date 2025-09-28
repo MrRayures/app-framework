@@ -24,13 +24,55 @@
             </button>
         </li>
         <li class="c-buttonList__item">
-            <button class="c-button c-button--secondary c-button--icon-left c-icon-delete">
+            <button
+                id="showModal"
+                class="c-button c-button--secondary c-button--icon-left c-icon-delete"
+            >
                 Supprimer les données
             </button>
         </li>
     </ul>
 
-    <a href="{{ 'app-index' | path }}" class="c-button c-button--primary c-button--back">Retour</a>
-{% endblock %}
+    <div class="c-buttonGroup u-mt-32">
+        <a
+            href="{{ 'app-index' | path }}"
+            class="c-button c-button--primary c-button--icon-left c-icon-arrow-back"
+            >Retour</a
+        >
+    </div>
 
+    <dialog class="c-dialog" id="alertDialog">
+        <h2 class="c-dialog__title">Supprimer les données ?</h2>
+        <p>
+            Attention vous allez supprimer toutes les données, vous pouvez les sauvegarder en
+            utilisant "Exportez les données". Voulez-vous continuer ?
+        </p>
+        <div class="c-buttonGroup">
+            <button id="resetData" type="button" class="c-button c-button--primary">
+                Oui, supprimer les données
+            </button>
+            <button id="closeModal" type="button" class="c-button c-button--secondary">
+                Annuler
+            </button>
+        </div>
+    </dialog>
+{% endblock %}
 <!-- //END page Content -->
+
+<!-- Custom JS -->
+{% block custom_js %}
+    <script>
+        // Modal
+        let showModal = document.querySelector('#showModal');
+        let closeModal = document.querySelector('#closeModal');
+        const alertDialog = document.getElementById('alertDialog');
+
+        showModal.onclick = () => {
+            alertDialog.showModal();
+        };
+
+        closeModal.onclick = () => {
+            alertDialog.close();
+        };
+    </script>
+{% endblock %}

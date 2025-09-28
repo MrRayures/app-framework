@@ -13,14 +13,14 @@
         {% block custom_css %}{% endblock %}
     </head>
 
-    <body class="{{ body_class }} c-layout">
-        {% if header.show %}
-            {% include "components/_templates/components/header.html" %}
-        {% endif %}
-        <!-- //END Header -->
-        <div id="app" class="c-content {{ content_class }}">
-            {% block page_content %}{% endblock %}
-        </div>
+    <body class="{{ body_class }} ">
+        <main id="app" class="c-layout">
+            {% if header.show %}
+                {% include "components/_templates/components/header.html" %}
+            {% endif %}
+            <!-- //END Header -->
+            <div class="c-content {{ content_class }}">{% block page_content %}{% endblock %}</div>
+        </main>
 
         <!--
         <script type="text/javascript" src="{{ '/app.js' | path }}"></script>

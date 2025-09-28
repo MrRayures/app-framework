@@ -12,53 +12,28 @@
 {% block page_content %}
     <h1 class="c-title">{{ page_title }}</h1>
 
-    <a
-        href="{{ 'game-injury-localisation' | path }}"
-        class="c-button c-button--lg c-button--primary c-button--sticky"
-    >
-        Prise en charge du patient
-    </a>
+    <div class="c-grid c-grid--2 u-mb-32">
+        <a
+            href="{{ 'game-injury-localisation' | path }}"
+            class="c-button c-button--lg c-button--primary"
+        >
+            Nouveau patient
+        </a>
 
-    <p class="c-subtitle">Statistiques</p>
-    <ul class="c-list c-list--corner">
-        <li class="c-list__item">Patient(s) soigné(s) : <span>4</span></li>
-        <li class="c-list__item">Patient(s) décédé(s) : <span>1</span></li>
-        <li class="c-list__item">Zone la plus endommagée: <span>Thorax</span></li>
-        <li class="c-list__item">Blessure la plus courante : <span>?</span></li>
-        <li class="c-list__item">Protection ballistique : <span>20%</span></li>
-    </ul>
+        <ul class="c-list c-list--corner ">
+            <li class="c-list__item">Temps de soin : <span>30s</span></li>
+            <li class="c-list__item">Mort active : <span>Non</span></li>
+        </ul>
+    </div>
 
-    <br /><br /><br />
-    {%
-        set items = [
-            {order: "4", id:"457604", time: "18h24", local: "Jambes", protection: false, injury: "Fracture"},
-            {order: "3", id:"457603", time: "17h36", local: "Bras", protection: false, injury: "Luxation"},
-            {order: "2", id:"457602", time: "17h05", local: "Thorax", protection: false, injury: "Arrêt cardiaque"},
-            {order: "1", id:"457601", time: "16h43", local: "Thorax", protection: true, injury: "Hémorragie", dead: true}
-        ]
-    %}
-    <ul class="c-patientList">
-        {% for item in items %}
-            <li class="c-patientList__item">
-                <div class="c-patient">
-                    <span class="c-patient__order">{{ item.order }}</span>
-                    <h2 class="c-patient__title">
-                        #ID{{ item.id }} - {{ item.time }}
-                        {% if item.dead %}☠️{% endif %}
-                    </h2>
-                    <div class="c-patient__injury">
-                        <p>
-                            {{ item.local }}
-                            {% if item.protection %}
-                                [Protection ballistique]
-                            {% endif %}
-                        </p>
-                        <p>{{ item.injury }}</p>
-                    </div>
-                </div>
-            </li>
-        {% endfor %}
-    </ul>
+    <div class="c-buttonGroup">
+        <a href="{{ 'game-settings' | path }}" class="c-button c-button--sm c-button--secondary"
+            >Paramètres</a
+        >
+        <a href="{{ 'game-stats' | path }}" class="c-button c-button--sm c-button--secondary"
+            >Stats</a
+        >
+    </div>
 {% endblock %}
 
 <!-- //END page Content -->

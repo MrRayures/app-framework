@@ -33,6 +33,10 @@
     max-width: 30rem;
     width: 100%;
 
+    @media (orientation: portrait) {
+        max-width: none;
+    }
+
     .c-button {
         width: 100%;
     }

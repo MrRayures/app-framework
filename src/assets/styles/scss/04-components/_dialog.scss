@@ -1,0 +1,29 @@
+/*
+* Dialog
+*/
+
+.c-dialog {
+    background-color: var(--bg);
+    color: #fff;
+    padding: 2rem;
+    max-width: 60rem;
+
+    @media (orientation: portrait) {
+        margin: auto 0 0 0;
+    }
+
+    p {
+        color: white;
+        margin-bottom: 1.6rem;
+        font-size: 1.4rem;
+    }
+}
+
+.c-dialog__title {
+    font-size: 2rem;
+    margin-bottom: 1.6rem;
+}
+
+::backdrop {
+    background-color: rgba(0, 0, 0, 0.8);
+}

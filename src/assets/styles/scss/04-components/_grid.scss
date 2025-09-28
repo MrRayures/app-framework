@@ -1,0 +1,16 @@
+/*
+* Grid
+*/
+
+.c-grid {
+    display: grid;
+    gap: 2.4rem;
+}
+
+.c-grid--2 {
+    grid-template-columns: 1fr 1fr;
+
+    @media (orientation: portrait) {
+        grid-template-columns: 1fr;
+    }
+}

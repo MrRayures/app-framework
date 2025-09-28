@@ -13,11 +13,12 @@
     <h1 class="c-title">{{ page_title }}</h1>
 
     <ul class="c-list c-list--corner">
-        <li class="c-list__item">Patient(s) soigné(s) : <span>4</span></li>
-        <li class="c-list__item">Patient(s) décédé(s) : <span>0</span></li>
-        <li class="c-list__item">Zone la plus endommagée: <span>Thorax</span></li>
-        <li class="c-list__item">Blessure la plus courante : <span>Hémoragie</span></li>
-        <li class="c-list__item">Protection ballistique : <span>20%</span></li>
+        <li class="c-list__item">Total : <span>4</span></li>
+        <li class="c-list__item">Soigné(s) : <span>3</span></li>
+        <li class="c-list__item">Décédé(s) : <span>1</span></li>
+        <li class="c-list__item">Zone la plus endommagée: <span>Bras droit (2)</span></li>
+        <li class="c-list__item">Blessure la plus courante : <span>Hémoragie (2)</span></li>
+        <li class="c-list__item">Avec protection ballistique : <span>0</span></li>
     </ul>
 
     <br /><br /><br />
@@ -36,20 +37,29 @@
                     <span class="c-patient__order">{{ item.order }}</span>
                     <h2 class="c-patient__title">#ID{{ item.id }} - {{ item.time }}</h2>
                     <div class="c-patient__injury">
-                        <p>
-                            {{ item.local }}
-                            {% if item.protection %}
-                                [Protection ballistique]
-                            {% endif %}
-                        </p>
-                        <p>{{ item.injury }}</p>
+                        <div class="c-patient__injury">
+                            <p>Date : 21/10/2025</p>
+                            <p>Status : Décédé ☠️</p>
+                            <p>Zone : {{ item.local }}</p>
+                            <p>
+                                Protection ballistique :
+                                {% if item.protection %}Oui{% else %}Non{% endif %}
+                            </p>
+                            <p>Blessure : {{ item.injury }}</p>
+                        </div>
                     </div>
                 </div>
             </li>
         {% endfor %}
     </ul>
 
-    <a href="{{ 'game-start' | path }}" class="c-button c-button--primary c-button--back">Retour</a>
+    <div class="c-buttonGroup u-mt-32">
+        <a
+            href="{{ 'app-index' | path }}"
+            class="c-button c-button--primary c-button--icon-left c-icon-arrow-back"
+            >Retour</a
+        >
+    </div>
 {% endblock %}
 
 <!-- //END page Content -->

@@ -39,6 +39,17 @@
     }
 }
 
+.c-field--checkbox {
+    .c-field__wrapper {
+        display: flex;
+        gap: 1.6rem;
+    }
+
+    .c-label {
+        margin-bottom: 0;
+    }
+}
+
 /*
 * Label
 */

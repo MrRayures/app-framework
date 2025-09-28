@@ -4,7 +4,7 @@
 
 .c-gameCard {
     padding: 2rem;
-    border: 1px solid white;
+    border: 1px solid var(--primary);
     display: flex;
     justify-content: space-between;
     gap: 2.4rem;
@@ -14,18 +14,30 @@
     }
 
     &:hover {
-        .c-button {
-            --btnBgColor: var(--primary);
-            --btnColor: black;
-        }
+        border-color: var(--secondary);
     }
 }
 
 .c-gameCard__infos {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     flex-grow: 1;
 }
 
 .c-gameCard__title {
     font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.c-gameCard__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+
+    > * {
+        width: 100%;
+    }
+}
+
+.c-gameCard--loaded {
+    border-left-width: 8px;
 }

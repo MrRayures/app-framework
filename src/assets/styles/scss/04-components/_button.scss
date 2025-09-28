@@ -3,9 +3,9 @@
 */
 
 .c-button {
-    --btnHeight: 4rem;
+    --btnHeight: 5.6rem;
     --btnBgColor: transparent;
-    --btnBorderColor: white;
+    --btnBorderColor: var(--primary);
     --btnColor: var(--text);
 
     min-height: var(--btnHeight);
@@ -22,6 +22,7 @@
     padding: 0 2rem;
     text-decoration: none;
     font-size: 1.6rem;
+    transition: transform 100ms ease-in-out;
 
     &:not([disabled]) {
         cursor: pointer;
@@ -31,6 +32,12 @@
     @media (hover: hover) and (pointer: fine) {
         &:hover:not([disabled]) {
         }
+    }
+
+    &:focus,
+    &:active {
+        //transform: translateY(2px);
+        transform: scale(0.95);
     }
 
     &:disabled {
@@ -47,7 +54,8 @@
 
     @media (hover: hover) and (pointer: fine) {
         &:hover:not([disabled]) {
-            --btnBgColor: var(--primary);
+            --btnBgColor: var(--secondary);
+            --btnBorderColor: var(--secondary);
             --btnColor: var(--bg);
         }
     }
@@ -63,8 +71,9 @@
 
     @media (hover: hover) and (pointer: fine) {
         &:hover:not([disabled]) {
-            --btnBgColor: var(--primary);
-            --btnColor: black;
+            --btnBgColor: transparent;
+            --btnBorderColor: var(--secondary);
+            --btnColor: var(--secondary);
         }
     }
 }
@@ -96,13 +105,13 @@
 * Taille
 */
 .c-button--sm {
-    --btnHeight: 3.2rem;
-}
-.c-button--md {
     --btnHeight: 4rem;
 }
-.c-button--lg {
+.c-button--md {
     --btnHeight: 5.6rem;
+}
+.c-button--lg {
+    --btnHeight: 7.2rem;
 }
 
 /*
@@ -161,4 +170,11 @@
     display: flex;
     gap: 3.2rem;
     flex-wrap: wrap;
+
+    @media (orientation: portrait) {
+        flex-direction: column;
+        > * {
+            width: 100%;
+        }
+    }
 }

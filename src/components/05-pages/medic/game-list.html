@@ -14,26 +14,99 @@
 
     <ul class="c-gameList">
         <li class="c-gameList__item">
-            <div class="c-gameCard">
+            <div class="c-gameCard c-gameCard--loaded">
                 <div class="c-gameCard__infos">
                     <h2 class="c-gameCard__title">Op Night Corp</h2>
                     <p>02.08.2025 à Thouars</p>
+                    <p>Mort active: Non</p>
+                    <p>Temps de soin: 30</p>
+                    <p>Patients : 4</p>
                 </div>
-                <a href="{{ 'game-start' | path }}" class="c-button c-button--secondary">Charger</a>
+                <form class="c-gameCard__actions" action="">
+                    <p><span class="c-icon-check c-icon--left"></span> Partie chargé</p>
+                    <button
+                        data-id="468e5789c9"
+                        data-delete=""
+                        type="submit"
+                        class="c-button c-button--sm c-button--secondary c-button--icon-left c-icon-delete"
+                    >
+                        <span class="c-button__content">Supprimer</span>
+                    </button>
+                </form>
             </div>
         </li>
 
         <li class="c-gameList__item">
             <div class="c-gameCard">
                 <div class="c-gameCard__infos">
-                    <h2 class="c-gameCard__title">OLD scarab</h2>
-                    <p>19.01.2025 à Touvérac</p>
+                    <h2 class="c-gameCard__title">Partie de test</h2>
+                    <p>21/10/2025 à Angoulême</p>
+                    <p>Mort active: Non</p>
+                    <p>Temps de soin: 30</p>
+                    <p>Patients : 4</p>
                 </div>
-                <a href="{{ 'game-start' | path }}" class="c-button c-button--secondary">Charger</a>
+                <form class="c-gameCard__actions" action="">
+                    <button
+                        data-id="468e5789c9"
+                        data-load=""
+                        type="submit"
+                        class="c-button c-button--secondary c-button--icon-left c-icon-upload"
+                    >
+                        Charger
+                    </button>
+                    <button
+                        id="showModal"
+                        data-id="468e5789c9"
+                        data-delete=""
+                        type="button"
+                        class="c-button c-button--sm c-button--secondary c-button--icon-left c-icon-delete"
+                    >
+                        <span class="c-button__content">Supprimer</span>
+                    </button>
+                </form>
             </div>
         </li>
     </ul>
+    <div class="c-buttonGroup u-mt-32">
+        <a
+            href="{{ 'app-index' | path }}"
+            class="c-button c-button--primary c-button--icon-left c-icon-arrow-back"
+            >Retour</a
+        >
+    </div>
 
-    <a href="{{ 'app-index' | path }}" class="c-button c-button--primary c-button--back">Retour</a>
+    <dialog class="c-dialog" id="alertDialog">
+        <h2 class="c-dialog__title">Supprimer "Partie de test" ?</h2>
+        <p>
+            Attention vous allez supprimer toutes les données de "Partie de test". Voulez-vous
+            continuer ?
+        </p>
+        <div class="c-buttonGroup">
+            <button id="resetData" type="button" class="c-button c-button--primary">
+                Oui, supprimer les données
+            </button>
+            <button id="closeModal" type="button" class="c-button c-button--secondary">
+                Annuler
+            </button>
+        </div>
+    </dialog>
 {% endblock %}
 <!-- //END page Content -->
+
+<!-- Custom JS -->
+{% block custom_js %}
+    <script>
+        // Modal
+        let showModal = document.querySelector('#showModal');
+        let closeModal = document.querySelector('#closeModal');
+        const alertDialog = document.getElementById('alertDialog');
+
+        showModal.onclick = () => {
+            alertDialog.showModal();
+        };
+
+        closeModal.onclick = () => {
+            alertDialog.close();
+        };
+    </script>
+{% endblock %}
