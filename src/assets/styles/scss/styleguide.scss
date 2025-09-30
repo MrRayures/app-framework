@@ -4,294 +4,287 @@
   Version : 1.0
 -----------------------------------------------------------------------------------------------------*/
 
-
 /*
 * Let's import ALL stuff
 */
 
 @import 'app';
 
-
-$sg-bgcolor : #FFFFFF;
-$sg-color : #173D6C;
-$sg-header-bgcolor: #F3F9FE;
-$sg-list-bgcolor: #F3F9FE;
-$sg-radius : 4px;
-
+$sg-bgcolor: #ffffff;
+$sg-color: #173d6c;
+$sg-header-bgcolor: #f3f9fe;
+$sg-list-bgcolor: #f3f9fe;
+$sg-radius: 4px;
 
 // Body
 .sg-body {
-  overflow: visible;
-  height: auto;
-  background-color: $sg-bgcolor;
+    overflow: visible;
+    height: auto;
+    background-color: $sg-bgcolor;
 
-  :focus-visible {
-    outline: 2px dotted $sg-color;
-    outline-offset: 4px;
-    transition: none;
-  }
-
-  // Header
-  .sg-header {
-    display: flex;
-    align-items: center;
-    background: $sg-header-bgcolor;
-    padding: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .sg-header__logo {
-    max-height: 5rem;
-    margin-right: 2rem;
-  }
-
-  .sg-header__title {
-    font-size: 1.6rem;
-    font-weight: 700;
-    display: block;
-    color: $sg-color;
-    span {
-      display: block;	
-      color: $sg-color;
-      font-size: 1.4rem;
-      font-weight: 400;
-      @include mq(max, bp(lg)) {
-        margin-left: 2rem;
-      }
+    :focus-visible {
+        outline: 2px dotted $sg-color;
+        outline-offset: 4px;
+        transition: none;
     }
-  }
 
-  a.sg-header__title {
-    color: $sg-color;
-    &:hover {
-      text-decoration: underline;
-      color: $sg-color;
+    // Header
+    .sg-header {
+        display: flex;
+        align-items: center;
+        background: $sg-header-bgcolor;
+        padding: 2rem;
+        margin-bottom: 2rem;
     }
-  }
 
-  .sg-title {
-    background-color: $sg-header-bgcolor;
-    padding: 1rem 2rem;
-    color: $sg-color;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    font-weight: 400;
-    text-transform: uppercase;
-  }
-
-  .sg-subtitle {
-    font-size: 1.6rem;
-    margin-bottom: 2rem;
-    font-weight: 700;
-    span {
-      display: inline-block;
-      background-color: $sg-header-bgcolor;
-      color: $sg-color;
-      border-radius: 2rem;
-      padding: 0.6rem 2rem;
+    .sg-header__logo {
+        max-height: 5rem;
+        margin-right: 2rem;
     }
-    ~ .sg-subtitle {
-      margin-top: 4rem;
+
+    .sg-header__title {
+        font-size: 1.6rem;
+        font-weight: 700;
+        display: block;
+        color: $sg-color;
+        span {
+            display: block;
+            color: $sg-color;
+            font-size: 1.4rem;
+            font-weight: 400;
+            @include mq(max, bp(lg)) {
+                margin-left: 2rem;
+            }
+        }
     }
-  }
 
-  .sg-h1 {
-    color: $sg-color;
-    font-size: 4.8rem;
-    font-weight: 400;
-    font-family: var(--font-primary);
-    margin-bottom: 2rem;
-  }
-
-  .sg-h2 {
-    color: $sg-color;
-    font-size: 3.2rem;
-    margin-bottom: 2rem;
-    font-family: var(--font-primary);
-    ~.sg-h2 {
-     //margin-top: 4rem;
+    a.sg-header__title {
+        color: $sg-color;
+        &:hover {
+            text-decoration: underline;
+            color: $sg-color;
+        }
     }
-  }
 
-  .sg-h3 {
-    color: $sg-color;
-    margin: 2rem 0 1rem 0;
-    font-size: 2rem;
-    font-family: var(--font-primary);
-    ~.sg-h3 {
-      //margin-top: 4rem;
+    .sg-title {
+        background-color: $sg-header-bgcolor;
+        padding: 1rem 2rem;
+        color: $sg-color;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        font-weight: 400;
+        text-transform: uppercase;
     }
-  }
 
-  .sg-h4 {
-    margin: 2rem 0 1rem 0;
-    font-size: 2rem;
-    font-weight: 400;
-    color: #000;
-  }
-
-  .sg-text {
-    color: #000000;
-    margin-bottom: 2rem;
-    code {
-      background: #f5f5f5;
-      padding: 0.2rem 0.5rem;
-      display: inline-block;
-      color: #000000;
-      border-radius: $sg-radius;
-      font-size: 1.4rem;
+    .sg-subtitle {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+        font-weight: 700;
+        span {
+            display: inline-block;
+            background-color: $sg-header-bgcolor;
+            color: $sg-color;
+            border-radius: 2rem;
+            padding: 0.6rem 2rem;
+        }
+        ~ .sg-subtitle {
+            margin-top: 4rem;
+        }
     }
-  }
 
-  a:not([class]) {
-    text-decoration: underline;
-    color: #000;
-    &:hover {
-      color: #FFF;
-      background-color: #000;
+    .sg-h1 {
+        color: $sg-color;
+        font-size: 4.8rem;
+        font-weight: 400;
+        font-family: var(--font-primary);
+        margin-bottom: 2rem;
     }
-  }
 
-  
+    .sg-h2 {
+        color: $sg-color;
+        font-size: 3.2rem;
+        margin-bottom: 2rem;
+        font-family: var(--font-primary);
+        ~ .sg-h2 {
+            //margin-top: 4rem;
+        }
+    }
 
-  /*
+    .sg-h3 {
+        color: $sg-color;
+        margin: 2rem 0 1rem 0;
+        font-size: 2rem;
+        font-family: var(--font-primary);
+        ~ .sg-h3 {
+            //margin-top: 4rem;
+        }
+    }
+
+    .sg-h4 {
+        margin: 2rem 0 1rem 0;
+        font-size: 2rem;
+        font-weight: 400;
+        color: #000;
+    }
+
+    .sg-text {
+        color: #000000;
+        margin-bottom: 2rem;
+        code {
+            background: #f5f5f5;
+            padding: 0.2rem 0.5rem;
+            display: inline-block;
+            color: #000000;
+            border-radius: $sg-radius;
+            font-size: 1.4rem;
+        }
+    }
+
+    a:not([class]) {
+        text-decoration: underline;
+        color: #000;
+        &:hover {
+            color: #fff;
+            background-color: #000;
+        }
+    }
+
+    /*
 	* Content
 	*/
-  .sg-main {
-    padding: 2rem 6rem;
-    margin-bottom: 6rem;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 120rem;
-  }
-
-  .sg-content {
-    padding: 2rem;
-    margin-bottom: 6rem;
-  }
-
-  .sg-alert,
-  .sg-warning,
-  .sg-success {
-    padding: 1rem;
-    border-radius: $sg-radius;
-    border: 1px solid rgba($sg-color, 0.4);
-    background-color: rgba($sg-bgcolor, 0.1);
-    display: inline-block;
-    margin-bottom: 2rem;
-    &::before {
-      margin-right: 1rem;
+    .sg-main {
+        padding: 2rem 6rem;
+        margin-bottom: 6rem;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 120rem;
     }
-  }
 
-  .sg-alert {
-    color: #DF0021;
-    border-color: rgba(#DF0021, 0.4);
-    background-color: rgba(#DF0021, 0.1);
-    &:before {
-      content: "❌ ";
+    .sg-content {
+        padding: 2rem;
+        margin-bottom: 6rem;
     }
-  }
 
-  .sg-warning {
-    color: #FFA800;
-    border-color: rgba(#FFA800, 0.4);
-    background-color: rgba(#FFA800, 0.1);
-    &:before {
-      content: "⚠️";
+    .sg-alert,
+    .sg-warning,
+    .sg-success {
+        padding: 1rem;
+        border-radius: $sg-radius;
+        border: 1px solid rgba($sg-color, 0.4);
+        background-color: rgba($sg-bgcolor, 0.1);
+        display: inline-block;
+        margin-bottom: 2rem;
+        &::before {
+            margin-right: 1rem;
+        }
     }
-  }
 
-  .sg-success {
-    color: #39A033;
-    border-color: rgba(#39A033, 0.4);
-    background-color: rgba(#39A033, 0.1);
-    &:before {
-      content: "✅";
+    .sg-alert {
+        color: #df0021;
+        border-color: rgba(#df0021, 0.4);
+        background-color: rgba(#df0021, 0.1);
+        &:before {
+            content: '❌ ';
+        }
     }
-  }
 
+    .sg-warning {
+        color: #ffa800;
+        border-color: rgba(#ffa800, 0.4);
+        background-color: rgba(#ffa800, 0.1);
+        &:before {
+            content: '⚠️';
+        }
+    }
 
-  /*
+    .sg-success {
+        color: #39a033;
+        border-color: rgba(#39a033, 0.4);
+        background-color: rgba(#39a033, 0.1);
+        &:before {
+            content: '✅';
+        }
+    }
+
+    /*
 	* list
 	*/
-  .sg-list {
-    list-style: none;
-    margin-bottom: 3rem;
-    padding: 0;
-    code {
-      background: #f5f5f5;
-      padding: 0.2rem 0.5rem;
-      display: inline-block;
-      color: #000000;
-      border-radius: $sg-radius;
-      font-size: 1.4rem;
-    }
-  }
-
-  .sg-list--color {
-    display: flex;
-    flex-wrap: wrap;
-    li {
-      margin-right: 2rem;
-      margin-bottom: 2rem;
-    }
-  }
-
-  .sg-list--border {
-    padding-left: 1rem;
-    border-left: 4px solid #E9E9E9;
-    margin-bottom: 3rem;
-    li {
-      margin-bottom: 0.4rem;
-    }
-  }
-
-  .sg-list--icon {
-    display: flex;
-    flex-wrap: wrap;
-    li {
-      margin: 0 1rem 1rem 1rem;
-      .c-icon {
-        width: 6.2rem;
-        height: 6.2rem;
-      }
-      &:first-child {
-        margin-left: 0;
-      }
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-  }
-
-  .sg-list--link {
-    a {
-      background: $sg-list-bgcolor;
-      border-radius: $sg-radius;
-      color: $sg-color;
-      display: block;
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-      padding: 1rem 2rem;
-      position: relative;
-      text-decoration: none;
-      &:hover {
-        font-weight: 700;
-        color: $sg-color;
-        background: $sg-list-bgcolor;
-        text-decoration: underline;
-      }
+    .sg-list {
+        list-style: none;
+        margin-bottom: 3rem;
+        padding: 0;
+        code {
+            background: #f5f5f5;
+            padding: 0.2rem 0.5rem;
+            display: inline-block;
+            color: #000000;
+            border-radius: $sg-radius;
+            font-size: 1.4rem;
+        }
     }
 
-    &.sg-list--sm {
-      a {
-        padding: 0.6rem 2rem;
-      }
+    .sg-list--color {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+            margin-right: 2rem;
+            margin-bottom: 2rem;
+        }
     }
-  }
+
+    .sg-list--border {
+        padding-left: 1rem;
+        border-left: 4px solid #e9e9e9;
+        margin-bottom: 3rem;
+        li {
+            margin-bottom: 0.4rem;
+        }
+    }
+
+    .sg-list--icon {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+            margin: 0 1rem 1rem 1rem;
+            .c-icon {
+                width: 6.2rem;
+                height: 6.2rem;
+            }
+            &:first-child {
+                margin-left: 0;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .sg-list--link {
+        a {
+            background: $sg-list-bgcolor;
+            border-radius: $sg-radius;
+            color: $sg-color;
+            display: block;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            padding: 1rem 2rem;
+            position: relative;
+            text-decoration: none;
+            &:hover {
+                font-weight: 700;
+                color: $sg-color;
+                background: $sg-list-bgcolor;
+                text-decoration: underline;
+            }
+        }
+
+        &.sg-list--sm {
+            a {
+                padding: 0.6rem 2rem;
+            }
+        }
+    }
 }
-
 
 /*
 * BRAND
@@ -299,72 +292,70 @@ $sg-radius : 4px;
 
 //Font
 .sg-font {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .sg-font-first {
-  font-size: 12rem;
-  margin-right: 2rem;
+    font-size: 12rem;
+    margin-right: 2rem;
 }
 
 .sg-font-letter {
-  &:before {
-    font-size: 4rem;
-    display: block;
-  }
+    &:before {
+        font-size: 4rem;
+        display: block;
+    }
 }
 
-@each $font_name , $font_value in $font-families {
-  .sg-font--#{$font_name} {
-    font-family: #{$font_value};
-    .sg-font-letter  {
-      &:before {
-        content: "#{$font_value}";
-      }
+@each $font_name, $font_value in $font-families {
+    .sg-font--#{$font_name} {
+        font-family: #{$font_value};
+        .sg-font-letter {
+            &:before {
+                content: '#{$font_value}';
+            }
+        }
     }
-  }
 }
 
 // Color
 .sg-color {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
-  border-radius: $sg-radius;
-  background-color: #FFF;
-  overflow: hidden;
-	span {
-		font-size: 1.6rem;
-		color: #000000;
-    padding: 1rem;
-    display: block;
-    &:after {
-      display: block;
-      font-size: 1.2rem;
-      color: #000000;
-      margin-top: 1rem;
-    }
-	}
-	&:before {
-		content: "";
-		display: block;
-		width: 16rem;
-		height: 10rem;
-	}
-	@each $color_name , $color_value in $colors {
-    &.sg-color--#{$color_name} {
-			&:before {
-				background-color: #{$color_value};
-			}
-      span {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+    border-radius: $sg-radius;
+    background-color: #fff;
+    overflow: hidden;
+    span {
+        font-size: 1.6rem;
+        color: #000000;
+        padding: 1rem;
+        display: block;
         &:after {
-          content: "HEX : #{$color_value}";
+            display: block;
+            font-size: 1.2rem;
+            color: #000000;
+            margin-top: 1rem;
         }
-      }
-		}
-  }
+    }
+    &:before {
+        content: '';
+        display: block;
+        width: 16rem;
+        height: 10rem;
+    }
+    @each $color_name, $color_value in $colors {
+        &.sg-color--#{$color_name} {
+            &:before {
+                background-color: #{$color_value};
+            }
+            span {
+                &:after {
+                    content: 'HEX : #{$color_value}';
+                }
+            }
+        }
+    }
 }
-
-
 
 /*
 * Layout
@@ -372,131 +363,123 @@ $sg-radius : 4px;
 
 // grid
 .sg-grid {
-  [class*="o-col"] > div {
-    background-color: $sg-header-bgcolor;
-    border: 1px solid rgba($sg-color, 0.1);
-    padding: 1rem 2rem;
-    color: $sg-color;
-  }
+    [class*='o-col'] > div {
+        background-color: $sg-header-bgcolor;
+        border: 1px solid rgba($sg-color, 0.1);
+        padding: 1rem 2rem;
+        color: $sg-color;
+    }
 }
-
-
 
 /*
 * Utilitaires
 */
 .sg-code {
-  border-radius: $sg-radius;
-  border: 1px solid rgba($sg-color, 0.1);
-  background: rgba(#efefef, 0.5);
-  padding: 2rem;
-  margin-bottom: 4rem;
-  display: block;
-  font-size: 1.4rem;
-  line-height: 160%;
+    border-radius: $sg-radius;
+    border: 1px solid rgba($sg-color, 0.1);
+    background: rgba(#efefef, 0.5);
+    padding: 2rem;
+    margin-bottom: 4rem;
+    display: block;
+    font-size: 1.4rem;
+    line-height: 160%;
 }
 .sg-columns {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  margin-bottom: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-bottom: 4rem;
 }
 
 .sg-columns > :not(.sg-column):not(.o-row) {
-  //margin-right: 2rem;
-  //margin-left: 2rem;
+    //margin-right: 2rem;
+    //margin-left: 2rem;
 }
 
 .sg-columns--bordered {
-  border: 1px solid rgba($sg-color, 0.1);
-  border-radius: 0.4rem 0.4rem 0 0;
-  padding: 2rem;
+    border: 1px solid rgba($sg-color, 0.1);
+    border-radius: 0.4rem 0.4rem 0 0;
+    padding: 2rem;
 }
 
 .sg-box {
-  padding: 2rem;
+    padding: 2rem;
 }
 
 .sg-box--border {
-  border: 1px solid rgba($sg-color, 0.6);
+    border: 1px solid rgba($sg-color, 0.6);
 }
 
 .sg-box--icon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  .c-icon {
-    background: #efefef;
-  }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .c-icon {
+        background: #efefef;
+    }
 }
 
-
 // breakpoints
-@each $bp_key , $bp_key_value in $breakpoints {
-  .sg-bp--#{$bp_key} span {
-    &:after {
-      content: " #{$bp_key_value}"
+@each $bp_key, $bp_key_value in $breakpoints {
+    .sg-bp--#{$bp_key} span {
+        &:after {
+            content: ' #{$bp_key_value}';
+        }
     }
-  }
 }
 
 // Font
-@each $font_key , $font_key_value in $font-families {
-  .sg-font--#{$font_key} span {
-    &:after {
-      content: " #{$font_key_value}"
+@each $font_key, $font_key_value in $font-families {
+    .sg-font--#{$font_key} span {
+        &:after {
+            content: ' #{$font_key_value}';
+        }
     }
-  }
 }
-
 
 // Spacing
 .sg-space {
-  margin-bottom: 2rem;
-  font-size: 1.4rem;
-  color: #000;
-  margin-right: 2rem;
-  code {
-    text-align: center;
-    display: block;
+    margin-bottom: 2rem;
     font-size: 1.4rem;
-  }
-  &:before {
-    content: "";
-    margin: 0 auto;
-    display: block;
-    width: 10rem;
-    border: 1px solid rgba($sg-color, 0.1);
-    background: rgba($sg-header-bgcolor, 0.5);
-  }
-}
-
-@each $spacing_key , $spacing_key_value in $spacing {
-  .sg-spacing--#{$spacing_key} span {
-    &:after {
-      content: " #{$spacing_key_value}"
+    color: #000;
+    margin-right: 2rem;
+    code {
+        text-align: center;
+        display: block;
+        font-size: 1.4rem;
     }
-  }
-  .sg-space--#{$spacing_key} {
     &:before {
-      height: $spacing_key_value;
-      width: $spacing_key_value;
+        content: '';
+        margin: 0 auto;
+        display: block;
+        width: 10rem;
+        border: 1px solid rgba($sg-color, 0.1);
+        background: rgba($sg-header-bgcolor, 0.5);
     }
-  }
 }
 
+@each $spacing_key, $spacing_key_value in $spacing {
+    .sg-spacing--#{$spacing_key} span {
+        &:after {
+            content: ' #{$spacing_key_value}';
+        }
+    }
+    .sg-space--#{$spacing_key} {
+        &:before {
+            height: $spacing_key_value;
+            width: $spacing_key_value;
+        }
+    }
+}
 
 // Z-index
-@each $zindex_key , $zindex_key_value in $z-index {
-  .sg-zindex--#{$zindex_key} {
-    &:before {
-      content: "#{$zindex_key} :";
+@each $zindex_key, $zindex_key_value in $z-index {
+    .sg-zindex--#{$zindex_key} {
+        &:before {
+            content: '#{$zindex_key} :';
+        }
+        &:after {
+            content: '#{$zindex_key_value}';
+        }
     }
-    &:after {
-      content: "#{$zindex_key_value}"
-    }
-  }
 }
-
-
-

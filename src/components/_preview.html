@@ -1,28 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link media="all" rel="stylesheet" href="{{ '/app.css' | path }}">
-    <link media="all" rel="stylesheet" href="{{ '/_subtheme/assets/theme.css' | path }}">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link media="all" rel="stylesheet" href="{{ '/app.css' | path }}" />
+        <link media="all" rel="stylesheet" href="{{ '/_subtheme/assets/theme.css' | path }}" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
-    
-    <title>{{ _target.title }}</title>
-</head>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"
+        />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
 
-{% if not _target.context.fullPage %}
-    {% set bodyClass = "sg-body--presentation"%}
-{% endif %}
+        <title>{{ _target.title }}</title>
+    </head>
 
-<body class="sg-body {{bodyClass}}">
+    {% if not _target.context.fullPage %}
+        {% set bodyClass = "sg-body--presentation" %}
+    {% endif %}
 
-    <div class="sg-content">
-        {{ yield | safe}}
-    </div>
-
-</body>
+    <body class="sg-body {{ bodyClass }}">
+        <div class="sg-content">{{ yield | safe }}</div>
+    </body>
 </html>
-

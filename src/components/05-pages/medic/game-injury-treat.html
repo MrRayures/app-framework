@@ -10,11 +10,15 @@
 
 <!-- //START page Content -->
 {% block page_content %}
-    <h1 class="c-title">Le patient soufre d'une :</h1>
+    <div class="c-injury u-mb-32">
+        <div class="c-injury__icon">
+            <span class="c-icon-fracture c-icon--left"></span>
+        </div>
 
-    <div class="c-injury">
-        <span class="c-icon-close c-icon--left"></span>
-        <p class="c-injury__title">Fracture</p>
+        <div>
+            <p class="c-injury__text">Le patient soufre d'une :</p>
+            <p class="c-injury__title">Fracture</p>
+        </div>
     </div>
 
     <p class="c-subtitle">Procéder au(x) soin(s) suivant(s) :</p>
@@ -22,14 +26,13 @@
     <form class="c-injuryTreat" action="{{ 'game-end' | path }}">
         <ul class="c-injuryTreat__list">
             <li class="c-injuryTreat__listItem">
-                <span class="c-injuryTreat__marker">1</span>
                 <h2 class="c-injuryTreat__title">
                     <span id="progress" class="c-injuryTreat__progress"></span>
-                    <p>Immobilisation</p>
+                    <span class="c-icon-shield-plus c-icon--left"></span>
+                    <p>Immobiliser la fracture</p>
                     <span id="percent" class="c-injuryTreat__percent"></span>
                 </h2>
                 <div class="c-injuryTreat__content">
-                    <p>Immobilliser le membre fracturé avec un bandage</p>
                     <button
                         type="button"
                         class="c-button c-button--primary c-injuryTreat__button"
@@ -40,14 +43,13 @@
                 </div>
             </li>
             <li class="c-injuryTreat__listItem">
-                <span class="c-injuryTreat__marker">2</span>
                 <h2 class="c-injuryTreat__title">
                     <span class="c-injuryTreat__progress"></span>
-                    <p>Analgésique</p>
+                    <span class="c-icon-shield-plus c-icon--left"></span>
+                    <p>Injecter l'adrenaline</p>
                     <span class="c-injuryTreat__percent"></span>
                 </h2>
                 <div class="c-injuryTreat__content">
-                    <p>Injecter l’analgèsique</p>
                     <button
                         type="button"
                         class="c-button c-button--primary c-injuryTreat__button"
@@ -58,14 +60,13 @@
                 </div>
             </li>
             <li class="c-injuryTreat__listItem">
-                <span class="c-injuryTreat__marker">3</span>
                 <h2 class="c-injuryTreat__title">
                     <span class="c-injuryTreat__progress"></span>
-                    <p>Atelle</p>
-                    <span class="c-injuryTreat__percent"></span>
-                </h2>
-                <div class="c-injuryTreat__content">
+                    <span class="c-icon-shield-plus c-icon--left"></span>
                     <p>Poser une attelle</p>
+                    <span class="c-injuryTreat__percent"></span>
+                </h2>
+                <div class="c-injuryTreat__content">
                     <button
                         type="submit"
                         class="c-button c-button--primary c-injuryTreat__button"

@@ -1,5 +1,6 @@
 {
-    "label":"Header",
-    "fullPage": true,
-    "context": {}
+    "label": "Header",
+    "context": {
+        "fullPage": true
+    }
 }

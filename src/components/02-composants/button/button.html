@@ -1,17 +1,13 @@
 {% if modifier %}
-  {% set class = "c-button--"+modifier %}
+    {% set class = "c-button--"+modifier %}
 {% endif %}
 
-
-<h3 class="sg-h3">Type: </h3>
+<h3 class="sg-h3">Type:</h3>
 <p class="sg-text"><code>href="#"</code></p>
 <div class="sg-columns sg-columns--bordered">
     {% set button = { "id": "", "type": "link", "href": "#", "class": class, "text": text+"&nbsp;<code>"+modifier+"</code>" } %}
     {% include "components/_templates/components/button.html" %}
 </div>
-<pre><code class="language-html xml">
-    {% include "components/_templates/components/button.html" %}
-</code></pre>
 
 <p class="sg-text"><code>button</code></p>
 <div class="sg-columns sg-columns--bordered">
@@ -24,24 +20,23 @@
 
 <p class="sg-h3">Avec icône</p>
 <div class="sg-columns sg-columns--bordered">
-    {% set button = { "id": "", "type": "button", "class": class+" c-button--icon-left c-icon-chevron-gauche", "text": text, "disabled": false} %}
+    {% set button = { "id": "", "type": "button", "class": class+" c-button--icon-left c-icon-arrow-left", "text": text, "disabled": false} %}
     {% include "components/_templates/components/button.html" %}
 
-    {% set button = { "id": "", "type": "button", "class": class+" c-button--icon-right c-icon-chevron-droite", "text": text, "disabled": false} %}
+    {% set button = { "id": "", "type": "button", "class": class+" c-button--icon-right c-icon-arrow-left", "text": text, "disabled": false} %}
     {% include "components/_templates/components/button.html" %}
 
-    {% set button = { "id": "", "type": "button", "class": class+" c-icon-chevron-droite", "text": text, "disabled": false} %}
+    {% set button = { "id": "", "type": "button", "class": class+" c-icon-arrow-left", "text": text, "disabled": false} %}
     {% include "components/_templates/components/button.html" %}
 </div>
-
 
 <p class="sg-text">Taille</p>
-<div class="sg-columns sg-columns--bordered">
-    {% for size in sizes %}
+{% for size in sizes %}
+    <p class="sg-text"><code>{{ size }}</code></p>
+    <div class="sg-columns sg-columns--bordered">
         {% set button = { "id": "", "type": "button", "class": class+" c-button--"+size, "text": text+"&nbsp;<code>"+size+"</code>", "disabled": false} %}
         {% include "components/_templates/components/button.html" %}
-        {% set button = { "id": "", "type": "button", "class": class+" c-button--"+size+" c-icon-chevron-droite", "text": text+"&nbsp;<code>"+size+"</code>", "disabled": false} %}
+        {% set button = { "id": "", "type": "button", "class": class+" c-button--"+size+" c-icon-arrow-left", "text": text+"&nbsp;<code>"+size+"</code>", "disabled": false} %}
         {% include "components/_templates/components/button.html" %}
-    {% endfor %}
-</div>
-
+    </div>
+{% endfor %}

@@ -4,14 +4,23 @@
             <img src="{{ '/images/logo.svg' | path }}" alt="Logo" width="45" height="45" />
         </a>
         <nav class="c-header__nav" role="navigation" aria-label="main navigation">
-            {% if header.backUrl %}
-                <a href="{{ header.backUrl }}" class="c-button c-button--ghost c-icon-arrow-back">
-                    <span class="c-button__content">Retour</span>
-                </a>
-            {% endif %}
             <button
                 type="button"
-                class="c-button c-button--ghost c-icon-menu"
+                class="c-button c-button--sm c-button--ghost c-icon-chart-pie"
+                onclick="toggleMenu()"
+            >
+                <span class="c-button__content">Stats</span>
+            </button>
+            <button
+                type="button"
+                class="c-button c-button--sm c-button--ghost c-icon-settings"
+                onclick="toggleMenu()"
+            >
+                <span class="c-button__content">Paramètres</span>
+            </button>
+            <button
+                type="button"
+                class="c-button c-button--sm c-button--ghost c-icon-menu"
                 onclick="toggleMenu()"
             >
                 <span class="c-button__content">Ouvrir le menu</span>

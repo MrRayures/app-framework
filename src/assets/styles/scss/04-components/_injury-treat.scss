@@ -11,12 +11,17 @@
 
 .c-injuryTreat__listItem {
     margin-bottom: 2.4rem;
-    padding: 0 calc(var(--injuryTitleHeight) + 1rem);
     position: relative;
 
     &.active {
         .c-injuryTreat__title {
             font-weight: 600;
+            padding: 3rem 1.6rem;
+            font-size: 2rem;
+
+            [class*='c-icon-'] {
+                --iconSize: 4.8rem;
+            }
         }
 
         .c-injuryTreat__percent,
@@ -43,6 +48,11 @@
             right: 0;
             top: 0;
         }
+
+        [class*='c-icon-'] {
+            --iconSize: 2.4rem;
+        }
+
         .c-injuryTreat__progress {
             display: block;
             width: 100%;
@@ -70,11 +80,18 @@
     padding: 0 1.6rem;
     position: relative;
     display: flex;
+    gap: 1.6rem;
     align-items: center;
-    justify-content: space-between;
     font-weight: 400;
-    font-size: 2rem;
+    font-size: 1.6rem;
     border: 1px solid white;
+
+    [class*='c-icon-'] {
+        --iconSize: 2.4rem;
+
+        mix-blend-mode: difference;
+        //color: black;
+    }
 
     p {
         color: white;
@@ -97,10 +114,11 @@
     color: white;
     mix-blend-mode: difference;
     display: none;
+    margin-left: auto;
 }
 
 .c-injuryTreat__content {
-    padding: 1rem 1.6rem;
+    padding: 1rem 0;
     display: none;
 
     .c-button {
