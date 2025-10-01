@@ -12,17 +12,42 @@
 {% block page_content %}
     <h1 class="c-title">{{ page_title }}</h1>
 
-    <ul class="c-list c-list--corner">
-        <li class="c-list__item "><span>#ID2685149</span></li>
-        <li class="c-list__item">le <span>00.00.0000</span> à <span>00h00</span></li>
-        <li class="c-list__item">Zone blessé : <span>tête</span></li>
-        <li class="c-list__item">Blessure : <span>fracture</span></li>
-        <li class="c-list__item">Protection ballistique : <span>oui</span></li>
-    </ul>
+    <div class="c-blockIcon u-mb-32">
+        <div class="c-blockIcon__icon">
+            <span class="c-icon-dead c-icon--left"></span>
+        </div>
+        <div class="c-blockIcon__content">
+            <ul class="c-list">
+                <li class="c-list__item "><span>#ID2685149</span></li>
+                <li class="c-list__item">le <span>00.00.0000</span> à <span>00h00</span></li>
+                <li class="c-list__item">Zone blessé : <span>tête</span></li>
+                <li class="c-list__item">Blessure : <span>fracture</span></li>
+                <li class="c-list__item">Protection ballistique : <span>oui</span></li>
+            </ul>
+        </div>
+    </div>
 
-    <a href="{{ 'game-start' | path }}" class="c-button c-button--primary c-button--back">
-        Retour à l'accueil
-    </a>
+    <div class="c-block u-mb-32">
+        <div class="c-block__icon">
+            <span class="c-icon-win c-icon--left"></span>
+        </div>
+        <div class="c-block__content">
+            <ul class="c-list">
+                <li class="c-list__item "><span>#ID2685149</span></li>
+                <li class="c-list__item">le <span>00.00.0000</span> à <span>00h00</span></li>
+                <li class="c-list__item">Zone blessé : <span>tête</span></li>
+                <li class="c-list__item">Blessure : <span>fracture</span></li>
+                <li class="c-list__item">Protection ballistique : <span>oui</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="c-buttonGroup">
+        <a href="{{ 'game-start' | path }}" class="c-button c-button--primary"> Nouveau Patient </a>
+        <a href="{{ 'game-start' | path }}" class="c-button c-button--secondary">
+            Retour à l'accueil
+        </a>
+    </div>
 {% endblock %}
 
 <!-- //END page Content -->

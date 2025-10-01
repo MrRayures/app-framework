@@ -173,10 +173,15 @@
     gap: 3.2rem;
     flex-wrap: wrap;
 
+    > * {
+        min-width: 20rem;
+    }
+
     @media (orientation: portrait) {
         flex-direction: column;
         > * {
             width: 100%;
+            min-width: 20rem;
         }
     }
 }

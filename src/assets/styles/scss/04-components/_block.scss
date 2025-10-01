@@ -1,0 +1,33 @@
+/*
+* Block
+*/
+
+.c-block {
+    padding: 1.6rem;
+    @include corner(1.2);
+}
+
+.c-blockIcon {
+    display: flex;
+    align-items: flex-start;
+    gap: 3.2rem;
+
+    @media (orientation: portrait) {
+        flex-direction: column;
+    }
+}
+
+.c-blockIcon__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem;
+    color: var(--primary);
+    flex-shrink: 0;
+
+    @include corner(1.2);
+
+    [class*='c-icon-'] {
+        --iconSize: 7.2rem;
+    }
+}
