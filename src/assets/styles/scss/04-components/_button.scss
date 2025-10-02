@@ -19,7 +19,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0 2rem;
+    padding: 0 2.4rem;
     text-decoration: none;
     font-size: 1.6rem;
     transition: transform 100ms ease-in-out;
@@ -120,7 +120,7 @@
 * Avec icone
 */
 .c-button--icon-left {
-    padding-left: 1rem;
+    //padding-left: 1rem;
 
     &:before {
         content: '';
@@ -130,7 +130,7 @@
 }
 
 .c-button--icon-right {
-    padding-right: 1rem;
+    //padding-right: 1rem;
 
     &:after {
         content: '';
@@ -184,4 +184,11 @@
             min-width: 20rem;
         }
     }
+}
+
+.c-buttonGroup--sticky {
+    position: sticky;
+    bottom: 0;
+    padding: 2rem 0;
+    background-color: var(--bg);
 }

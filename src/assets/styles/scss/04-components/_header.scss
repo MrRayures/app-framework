@@ -6,23 +6,25 @@
 }
 
 .c-header {
+    //view-transition-name: page-header;
+
     background-color: var(--bg);
     flex-shrink: 0;
-    @media (orientation: portrait) {
-        position: sticky;
-        top: 0;
-        z-index: var(--zindex-sticky);
-    }
+
+    position: sticky;
+    top: 0;
+    z-index: var(--zindex-sticky);
 }
 
 .c-header__content {
     display: flex;
     align-items: center;
+    gap: 1.6rem;
     padding: 1rem;
 
     @media (orientation: landscape) {
         flex-direction: column;
-        justify-content: space-between;
+        //justify-content: space-between;
 
         height: 100vh;
         width: var(--headerSize);
@@ -53,10 +55,12 @@
 
     @media (orientation: landscape) {
         flex-direction: column;
+        margin-top: auto;
     }
 
     @media (orientation: portrait) {
         flex-direction: row;
+        margin-left: auto;
     }
 }
 

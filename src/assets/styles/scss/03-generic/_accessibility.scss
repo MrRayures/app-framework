@@ -8,7 +8,10 @@
 
 /* prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
-    *, ::before, ::after {
+    *,
+    ::before,
+    ::after {
+        view-transition-name: unset !important;
         animation: none !important;
         transition: none !important;
         animation-delay: -1ms !important;

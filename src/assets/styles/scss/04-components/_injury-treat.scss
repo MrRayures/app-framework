@@ -39,7 +39,6 @@
             display: block;
             width: var(--injuryTitleHeight);
             height: var(--injuryTitleHeight);
-            background-color: white;
             background-image: url('../icons/check.svg');
             background-position: center;
             background-size: 2.4rem auto;
@@ -60,24 +59,9 @@
     }
 }
 
-.c-injuryTreat__marker {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: var(--injuryTitleHeight);
-    height: var(--injuryTitleHeight);
-    background-color: white;
-    color: black;
-    font-size: 1.6rem;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .c-injuryTreat__title {
     min-height: var(--injuryTitleHeight);
-    padding: 0 1.6rem;
+    padding: 0.8rem 2.4rem 0.8rem 1.6rem;
     position: relative;
     display: flex;
     gap: 1.6rem;
@@ -90,7 +74,6 @@
         --iconSize: 2.4rem;
 
         mix-blend-mode: difference;
-        //color: black;
     }
 
     p {

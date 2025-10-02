@@ -5,6 +5,12 @@
 .c-grid {
     display: grid;
     gap: 2.4rem;
+
+    form,
+    .c-button {
+        height: 100%;
+        width: 100%;
+    }
 }
 
 .c-grid--2 {

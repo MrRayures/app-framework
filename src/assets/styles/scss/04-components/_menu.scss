@@ -2,7 +2,6 @@
 * Menu
 */
 .c-menu {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -10,6 +9,7 @@
     bottom: 0;
     background-color: var(--bg);
     z-index: var(--zindex-fixed);
+    transition: 200ms ease-in-out;
 
     @media (orientation: landscape) {
         left: var(--headerSize);
@@ -19,8 +19,9 @@
         top: var(--headerSize);
     }
 
-    &.active {
-        display: block;
+    &:not(.active) {
+        opacity: 0;
+        pointer-events: none;
     }
 }
 

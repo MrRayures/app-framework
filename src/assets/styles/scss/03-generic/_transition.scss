@@ -1,0 +1,84 @@
+/*
+* Transition
+*/
+
+@view-transition {
+    navigation: auto;
+}
+
+//view-transition
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 200ms;
+    animation-timing-function: ease-in-out;
+}
+
+/* Slide-in for page titles */
+::view-transition-old(page-title) {
+    animation: slide-out 0.4s ease forwards;
+}
+::view-transition-new(page-title) {
+    animation: slide-in 0.4s ease forwards;
+}
+
+::view-transition-old(page-header) {
+    @media (orientation: landscape) {
+        animation: slide-out 0.4s ease forwards;
+    }
+
+    @media (orientation: portrait) {
+        animation: slide-out-y 0.4s ease forwards;
+    }
+}
+::view-transition-new(page-header) {
+    @media (orientation: landscape) {
+        animation: slide-in 0.4s ease forwards;
+    }
+
+    @media (orientation: portrait) {
+        animation: slide-in-y 0.4s ease forwards;
+    }
+}
+
+/* Keyframes */
+@keyframes slide-in {
+    from {
+        transform: translateX(-2rem);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slide-out {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(2rem);
+        opacity: 0;
+    }
+}
+
+@keyframes slide-in-y {
+    from {
+        transform: translateY(-2rem);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes slide-out-y {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(2rem);
+        opacity: 0;
+    }
+}
