@@ -10,7 +10,7 @@
 
 <!-- //START page Content -->
 {% block page_content %}
-    <div class="c-grid c-grid--singleRow">
+    <div class="c-grid">
         <div class="c-grid__tile">
             <div>
                 <a
@@ -22,13 +22,23 @@
             </div>
         </div>
 
-        <div class="c-grid__tile">
+        <div class="c-grid__tile wideH">
             <div>
                 <ul class="c-list c-list--corner ">
                     <li class="c-list__item">Partie : <span>{{ page_title }}</span></li>
                     <li class="c-list__item">Temps de soin : <span>30s</span></li>
                     <li class="c-list__item">Mort active : <span>Non</span></li>
                 </ul>
+            </div>
+        </div>
+        <div class="c-grid__tile">
+            <div>
+                <a
+                    href="{{ 'game-injury-localisation' | path }}"
+                    class="c-button c-button--tile c-icon-scan c-button--primary"
+                >
+                    Scanner un dogTag NFC
+                </a>
             </div>
         </div>
     </div>

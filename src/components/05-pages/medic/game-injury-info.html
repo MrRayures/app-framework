@@ -1,0 +1,26 @@
+{% extends "components/_templates/layout.html" %}
+
+<!-- //START page variables -->
+{% set page_title = "Le patient soufre d'une fracture" %}
+{% set body_class = "" %}
+{% set content_class = "c-content--injury" %}
+
+{% set header = { show: true } %}
+<!-- //END page variables -->
+
+<!-- //START page Content -->
+{% block page_content %}
+    <div class="c-blockCorner">
+        <span class="c-icon-heavy-bleeding c-icon--left"></span>
+        <p class="u-font-48 u-font-700 u-text-uppercase u-line-height-xs">Hémorragie massive</p>
+    </div>
+
+    <a href="{{ 'game-injury-treat' | path }}" class="c-button c-button--primary outline">
+        Commencer le soin
+    </a>
+{% endblock %}
+<!-- //END page Content -->
+
+<!-- Custom JS -->
+{% block custom_js %}
+{% endblock %}

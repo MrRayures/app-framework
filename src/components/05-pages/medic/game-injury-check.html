@@ -13,7 +13,7 @@
     <h1 class="c-title">{{ page_title }}</h1>
     <p class="u-mb-32">Si besoin, stabiliser le joueur à l'aide d'un garrot.</p>
 
-    <div class="c-diagnostic u-mb-32">
+    <div id="diagnostic" class="c-diagnostic u-mb-32">
         <div id="progress" class="c-diagnostic__progress" style=""></div>
         <div id="progress_msg" class="c-diagnostic__text">Merci de patienter...</div>
         <p id="progress_percent" class="c-diagnostic__percent"></p>
@@ -72,7 +72,7 @@
                 progress.style.width = percent + '%';
                 progress_percent.textContent = Math.floor(percent) + '%';
 
-                console.log(current);
+                //console.log(current);
 
                 if (percent == '20') {
                     let rand = getRandomInt(msg.length);
@@ -100,6 +100,6 @@
             }, interval);
         }
 
-        startDiagnostic(10);
+        startDiagnostic(4);
     </script>
 {% endblock %}

@@ -5,7 +5,7 @@
 {% set body_class = "" %}
 {% set content_class = "c-content--page" %}
 
-{% set header = { show: false, backUrl: "{{ 'app-index' | path }}" } %}
+{% set header = { show: true, backUrl: "app-index" } %}
 <!-- //END page variables -->
 
 <!-- //START page Content -->
@@ -50,8 +50,9 @@
                 href="https://developer.mozilla.org/fr/docs/Web/API/Window/localStorage"
                 title="lien externe"
                 .
-                >localStorage</a
             >
+                localStorage
+            </a>
         </p>
     </div>
 
@@ -59,8 +60,9 @@
         <a
             href="{{ 'app-index' | path }}"
             class="c-button c-button--primary c-button--icon-left c-icon-arrow-left"
-            >Retour</a
         >
+            Retour à l'accueil
+        </a>
     </div>
 
     <dialog class="c-dialog" id="alertDialog">

@@ -3,7 +3,65 @@
 */
 
 .c-grid {
+    --gridColumn: 2;
+    --gridRows: 2;
+    --gridGap: 2.4rem;
+
     display: grid;
+    gap: var(--gridGap);
+
+    @media (orientation: landscape) {
+        height: 100%;
+        grid-template-columns: repeat(var(--gridColumn), 1fr);
+        grid-auto-rows: calc(
+            (100vh - ((var(--gridGap) * (var(--gridRows) + 1)))) / var(--gridRows)
+        );
+    }
+
+    @media (orientation: portrait) {
+        grid-template-columns: repeat(var(--gridColumn), 1fr);
+        grid-auto-rows: calc((100vh - (var(--gridGap) * 3) - var(--headerSize)) / var(--gridRows));
+    }
+
+    @include mq(max, bp(sm)) {
+        grid-template-columns: 1fr;
+        //grid-auto-rows: auto;
+    }
+}
+
+.c-grid__tile {
+    &.centered {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .c-button {
+        height: 100%;
+        width: 100%;
+    }
+
+    &.wideH {
+        grid-row: span 2;
+    }
+
+    > *,
+    form,
+    .c-list,
+    .c-button {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.c-grid--singleRow {
+    --gridRows: 1;
+}
+
+/*
+.c-grid {
+    display: grid;
+    align-items: flex-start;
     gap: 2.4rem;
 
     form,
@@ -20,3 +78,16 @@
         grid-template-columns: 1fr;
     }
 }
+
+.c-grid--stats {
+    grid-template-columns: 1fr 2fr;
+    gap: 4.8rem;
+
+    @include mq(max, bp(md)) {
+        grid-template-columns: 1fr;
+    }
+
+    @media (orientation: portrait) {
+        grid-template-columns: 1fr;
+    }
+}*/

@@ -3,28 +3,44 @@
         <a href="{{ 'app-index' | path }}" class="c-header__logo">
             <img src="{{ '/images/logo.svg' | path }}" alt="Logo" width="45" height="45" />
         </a>
+
+        {% if header.backUrl %}
+            <a
+                href="{{ header.backUrl | path }}"
+                class="c-button c-button--sm c-button--ghost c-icon-arrow-left"
+            >
+                <span class="c-button__content">Retour</span>
+            </a>
+        {% endif %}
+
         <nav class="c-header__nav" role="navigation" aria-label="main navigation">
-            <button
-                type="button"
-                class="c-button c-button--sm c-button--ghost c-icon-chart-pie"
-                onclick="toggleMenu()"
-            >
-                <span class="c-button__content">Stats</span>
-            </button>
-            <button
-                type="button"
-                class="c-button c-button--sm c-button--ghost c-icon-settings"
-                onclick="toggleMenu()"
-            >
-                <span class="c-button__content">Paramètres</span>
-            </button>
-            <button
-                type="button"
-                class="c-button c-button--sm c-button--ghost c-icon-menu"
-                onclick="toggleMenu()"
-            >
-                <span class="c-button__content">Ouvrir le menu</span>
-            </button>
+            {% if header.currentGame %}
+                <button
+                    type="button"
+                    class="c-button c-button--sm c-button--ghost c-icon-chart-pie"
+                    onclick="toggleMenu()"
+                >
+                    <span class="c-button__content">Stats</span>
+                </button>
+                <button
+                    type="button"
+                    class="c-button c-button--sm c-button--ghost c-icon-settings"
+                    onclick="toggleMenu()"
+                >
+                    <span class="c-button__content">Paramètres</span>
+                </button>
+            {% endif %}
+            {% if header.home %}
+                <h2 class="c-header__title">#Medic app</h2>
+            {% else %}
+                <button
+                    type="button"
+                    class="c-button c-button--sm c-button--ghost c-icon-menu"
+                    onclick="toggleMenu()"
+                >
+                    <span class="c-button__content">Ouvrir le menu</span>
+                </button>
+            {% endif %}
         </nav>
     </div>
 </header>

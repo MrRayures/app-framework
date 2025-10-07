@@ -3,72 +3,41 @@
 <!-- //START page variables -->
 {% set page_title = "Localisation de la blessure" %}
 {% set body_class = "" %}
-{% set content_class = "c-content--page" %}
+{% set content_class = "c-content--localisation" %}
 
 {% set header = { show: true } %}
 <!-- //END page variables -->
 
 <!-- //START page Content -->
 {% block page_content %}
-    <h1 class="c-title">{{ page_title }}</h1>
-
     <div class="c-injuryArea">
         <ul class="c-injuryArea__grid">
             <li class="c-injuryArea__gridItem head">
-                <a
-                    class="c-button c-button--primary outline"
-                    href="{{ 'game-injury-protection' | path }}"
-                >
-                    Tête
-                </a>
+                <button type="button" class="c-button c-button--primary outline">Tête</button>
             </li>
             <li class="c-injuryArea__gridItem left_arm">
-                <a
-                    class="c-button c-button--primary outline"
-                    href="{{ 'game-injury-protection' | path }}"
-                >
+                <button type="button" class="c-button c-button--primary outline">
                     Bras gauche
-                </a>
+                </button>
             </li>
             <li class="c-injuryArea__gridItem thorax">
-                <a
-                    class="c-button c-button--primary outline"
-                    href="{{ 'game-injury-protection' | path }}"
-                >
-                    Thorax
-                </a>
+                <button type="button" class="c-button c-button--primary outline">Thorax</button>
             </li>
             <li class="c-injuryArea__gridItem right_arm">
-                <a
-                    class="c-button c-button--primary outline"
-                    href="{{ 'game-injury-protection' | path }}"
-                >
-                    Bras droit
-                </a>
+                <button type="button" class="c-button c-button--primary outline">Bras droit</button>
             </li>
             <li class="c-injuryArea__gridItem left_leg">
-                <a
-                    class="c-button c-button--primary outline"
-                    href="{{ 'game-injury-protection' | path }}"
-                >
+                <button type="button" class="c-button c-button--primary outline">
                     Jambe gauche
-                </a>
+                </button>
             </li>
             <li class="c-injuryArea__gridItem pelvis">
-                <a
-                    class="c-button c-button--primary outline"
-                    href="{{ 'game-injury-protection' | path }}"
-                >
-                    Pelvis
-                </a>
+                <button type="button" class="c-button c-button--primary outline">Pelvis</button>
             </li>
             <li class="c-injuryArea__gridItem right_leg">
-                <a
-                    class="c-button c-button--primary outline"
-                    href="{{ 'game-injury-protection' | path }}"
-                >
+                <button type="button" class="c-button c-button--primary outline">
                     Jambe droite
-                </a>
+                </button>
             </li>
         </ul>
         <img
@@ -83,9 +52,48 @@
         />
     </div>
 
+    <dialog class="c-dialog" id="alertDialog">
+        <button
+            type="button"
+            id="closeModal"
+            class="c-button c-button--ghost c-button--sm c-icon-cross c-dialog__close"
+        >
+            <span class="c-button__content">Fermer la modal</span>
+        </button>
+        <h2 class="c-dialog__title">Protection ballistique</h2>
+        <p>Est-ce que le joueur dispose d’une protection balistique au niveau de la blessure ?</p>
+        <div class="c-buttonGroup">
+            <a href="{{ 'game-injury-check' | path }}" class="c-button c-button--secondary">
+                Oui
+            </a>
+            <a href="{{ 'game-injury-check' | path }}" class="c-button c-button--secondary">
+                Non
+            </a>
+        </div>
+    </dialog>
+
     <div class="c-footer">
         <p>[nom_de_la_partie_#139751 | patient #ID19742</p>
     </div>
 {% endblock %}
-
 <!-- //END page Content -->
+
+<!-- Custom JS -->
+{% block custom_js %}
+    <script>
+        // Modal
+        let buttons = document.querySelectorAll('.c-injuryArea__gridItem .c-button');
+        let closeModal = document.querySelector('#closeModal');
+        const alertDialog = document.getElementById('alertDialog');
+
+        buttons.forEach((button) => {
+            button.addEventListener('click', () => {
+                alertDialog.showModal();
+            });
+        });
+
+        closeModal.onclick = () => {
+            alertDialog.close();
+        };
+    </script>
+{% endblock %}

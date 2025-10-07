@@ -13,7 +13,7 @@
     display: none;
 
     @media (orientation: landscape) {
-        height: 60vh;
+        height: calc(100vh - (var(--contentPadding) * 2));
 
         &.horizontal {
             display: block;
@@ -21,8 +21,9 @@
     }
 
     @media (orientation: portrait) {
-        height: 60vh;
+        height: calc(100vh - var(--headerSize));
         margin: 0 auto;
+
         &.vertical {
             display: block;
         }

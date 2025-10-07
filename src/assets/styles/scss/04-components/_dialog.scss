@@ -24,6 +24,12 @@
     margin-bottom: 1.6rem;
 }
 
+.c-button.c-dialog__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 ::backdrop {
     background-color: rgba(0, 0, 0, 0.8);
 }

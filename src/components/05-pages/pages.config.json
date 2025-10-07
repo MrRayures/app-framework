@@ -19,19 +19,23 @@
                 "id": "medic",
                 "list": [
                     { "label": "Accueil", "fileName": "app-index" },
+                    { "label": "Accueil continuer", "fileName": "app-index-continue" },
+                    { "label": "Accueil loading", "fileName": "app-index-loading" },
                     { "label": "Nouvelle partie", "fileName": "game-add" },
                     { "label": "Charger une partie", "fileName": "game-list" },
                     { "label": "Options", "fileName": "app-settings" },
 
+                    { "label": "Partie : start", "fileName": "game-start" },
                     { "label": "Partie : options", "fileName": "game-settings" },
                     { "label": "Partie : stats", "fileName": "game-stats" },
-                    { "label": "Partie : start", "fileName": "game-start" },
+
                     {
                         "label": "Partie : localisation blessure",
                         "fileName": "game-injury-localisation"
                     },
                     { "label": "Partie : protection ?", "fileName": "game-injury-protection" },
                     { "label": "Partie : diagnostique", "fileName": "game-injury-check" },
+                    { "label": "Partie : blessure", "fileName": "game-injury-info" },
                     { "label": "Partie : soin", "fileName": "game-injury-treat" },
                     { "label": "Partie : terminé", "fileName": "game-end" }
                 ]

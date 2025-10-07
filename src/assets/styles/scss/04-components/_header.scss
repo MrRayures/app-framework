@@ -11,9 +11,19 @@
     background-color: var(--bg);
     flex-shrink: 0;
 
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
     z-index: var(--zindex-sticky);
+
+    @media (orientation: landscape) {
+        bottom: 0;
+    }
+
+    @media (orientation: portrait) {
+        right: 0;
+        left: 0;
+    }
 }
 
 .c-header__content {
@@ -66,6 +76,16 @@
 
 .c-header__logo {
     img {
-        max-width: 4.5rem;
+        max-width: 4rem;
+    }
+}
+
+.c-header__title {
+    font-weight: 400;
+    font-size: 1.2rem;
+    @media (orientation: landscape) {
+        transform: rotate(-90deg) translateX(50%);
+        white-space: nowrap;
+        transform-origin: center;
     }
 }

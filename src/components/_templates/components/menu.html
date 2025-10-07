@@ -1,16 +1,13 @@
 <div id="menu" class="c-menu {{ header.class }}">
     <div class="c-menu__content">
         <ul class="c-menu__list">
-            <li>
-                <a href="{{ 'game-start' | path }}" class="c-button c-button--secondary">
-                    Retour à l'accueil
-                </a>
-            </li>
-            <li>
-                <a href="{{ 'game-settings' | path }}" class="c-button c-button--secondary">
-                    Paramètres de la partie
-                </a>
-            </li>
+            {% if header.currentGame %}
+                <li>
+                    <a href="{{ 'game-start' | path }}" class="c-button c-button--secondary">
+                        Annuler le soin
+                    </a>
+                </li>
+            {% endif %}
             <li>
                 <a href="{{ 'app-index' | path }}" class="c-button c-button--secondary">
                     Quitter la partie

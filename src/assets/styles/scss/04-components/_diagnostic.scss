@@ -12,6 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: 200ms ease-in-out;
 }
 
 .c-diagnostic__progress {

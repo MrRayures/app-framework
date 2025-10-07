@@ -5,7 +5,8 @@
 .c-title {
     //view-transition-name: page-title;
 
-    font-size: 2.4rem;
+    font-size: 3.2rem;
+    font-weight: 500;
     margin-bottom: 3.2rem;
 
     display: flex;
@@ -14,7 +15,7 @@
     &::before {
         content: '';
         display: block;
-        width: 0.6rem;
+        width: 1rem;
         background-color: white;
     }
 
@@ -36,5 +37,21 @@
 
     ~ .c-subtitle {
         margin-top: 4.8rem;
+    }
+}
+
+.c-titleWrapper {
+    display: flex;
+    gap: 1.6rem;
+    margin-bottom: 3.2rem;
+
+    .c-title {
+        margin-bottom: 0;
+    }
+
+    .c-button {
+        --btnHeight: auto;
+        height: 100%;
+        min-height: none;
     }
 }

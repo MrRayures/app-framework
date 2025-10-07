@@ -2,23 +2,32 @@
 * content
 */
 
+:root {
+    --contentPadding: 2rem;
+}
+
 .c-content {
-    padding: 2rem;
+    padding: var(--contentPadding);
     width: 100%;
+}
+
+// Page
+.c-content--page {
+    flex-grow: 1;
     max-width: 60rem;
-    margin: 0 auto;
 }
 
 // HP
+/*
 .c-content--hp {
-    display: flex;
+    display: grid;
+    grid-template-columns: 20rem 1fr;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    flex-grow: 1;
     gap: 4.8rem;
-
     width: 100%;
+    max-width: 60rem;
+    margin: 0 auto;
 
     @media (orientation: landscape) {
         flex-direction: row;
@@ -31,6 +40,48 @@
 
 // Page
 .c-content--page {
-    //padding: 2rem;
+    flex-grow: 1;
+    max-width: 60rem;
+}
+
+// Stats
+.c-content--stats {
     flex-grow: 1;
 }
+
+//Game Start
+.c-content--gameStart {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.4rem;
+    width: 100%;
+
+    @media (orientation: portrait) {
+        grid-template-columns: 1fr;
+    }
+
+    .c-list,
+    .c-button {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// Injury
+.c-content--injury {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.4rem;
+    width: 100%;
+
+    @include mq(max, bp(md)) {
+        grid-template-columns: 1fr;
+    }
+
+    @media (orientation: portrait) {
+        grid-template-columns: 1fr;
+    }
+}
+*/

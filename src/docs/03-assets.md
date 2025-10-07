@@ -20,22 +20,22 @@ Markup conseillé
 
 ## Include
 ```js
-{% raw %}{% include 'assets/icons/chevron-droite.svg' %}{% endraw %}
+{% raw %}{% include 'assets/icons/arrow-left.svg' %}{% endraw %}
 ```
 ### Résultat :
 {% set svg = {class:"hello", width:"16", height:"16"} %}
-{% include 'assets/icons/chevron-droite.svg' %}
+{% include 'assets/icons/arrow-left.svg' %}
 
 
 ## Sprite SVG
 ```html
 {% raw %}<svg class="c-icon" width="32" height="32">
-  <use xlink:href="{{ '/icons/sprite/icons.svg#chevron-droite' | path }}" />
+  <use xlink:href="{{ '/icons/sprite/icons.svg#arrow-left' | path }}" />
 </svg>{% endraw %}
 ```
 ### Résultat :
 <svg class="c-icon" width="32" height="32">
-  <use xlink:href="{{ '/icons/sprite/icons.svg#chevron-droite' | path }}" />
+  <use xlink:href="{{ '/icons/sprite/icons.svg#arrow-left' | path }}" />
 </svg>
 
 

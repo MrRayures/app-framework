@@ -13,9 +13,17 @@ body {
 
     @media (orientation: landscape) {
         flex-direction: row;
+
+        &:has(.c-header) {
+            padding-left: var(--headerSize);
+        }
     }
 
     @media (orientation: portrait) {
         flex-direction: column;
+
+        &:has(.c-header) {
+            padding-top: var(--headerSize);
+        }
     }
 }
