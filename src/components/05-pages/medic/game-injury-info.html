@@ -10,14 +10,26 @@
 
 <!-- //START page Content -->
 {% block page_content %}
-    <div class="c-blockCorner">
-        <span class="c-icon-heavy-bleeding c-icon--left"></span>
-        <p class="u-font-48 u-font-700 u-text-uppercase u-line-height-xs">Hémorragie massive</p>
+    <div class="c-grid c-grid--singleRow">
+        <div class="c-grid__tile">
+            <a href="{{ 'game-injury-treat' | path }}" class="c-button c-button--primary outline">
+                Commencer le soin
+            </a>
+        </div>
+        <div class="c-grid__tile">
+            <div class="c-blockCorner c-blockCorner--injury">
+                <span class="c-icon-heavy-bleeding c-icon--left"></span>
+                <div>
+                    <p class="u-font-32 u-font-700 u-text-uppercase u-line-height-xs">
+                        Hémorragie massive
+                    </p>
+                    <p class="u-font-12">
+                        ☠️ Mort active <br />30% de change de mourrir à chaque étape de soin
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <a href="{{ 'game-injury-treat' | path }}" class="c-button c-button--primary outline">
-        Commencer le soin
-    </a>
 {% endblock %}
 <!-- //END page Content -->
 

@@ -12,46 +12,45 @@
 {% block page_content %}
     {%
         set items = [
-            {order: "4", id:"457604", time: "18h24", local: "Jambes", protection: false, injury: "Fracture"},
-            {order: "3", id:"457603", time: "17h36", local: "Bras", protection: false, injury: "Luxation"},
-            {order: "2", id:"457602", time: "17h05", local: "Tête", protection: false, injury: "Arrêt cardiaque"},
-            {order: "1", id:"457601", time: "16h43", local: "Thorax", protection: true, injury: "Hémorragie"}
+            {order: "4", id:"457604", time: "18h24", dead: false, local: "Jambes", protection: false, injury: "Fracture"},
+            {order: "3", id:"457603", time: "17h36", dead: false, local: "Bras", protection: false, injury: "Luxation"},
+            {order: "2", id:"457602", time: "17h05", dead: true, local: "Tête", protection: false, injury: "Arrêt cardiaque"},
+            {order: "1", id:"457601", time: "16h43", dead: false, local: "Thorax", protection: true, injury: "Hémorragie"}
         ]
     %}
     <div class="c-grid c-grid--singleRow">
         <div class="c-grid__tile ">
-            <div class="u-sticky-top">
-                <ul class="c-list c-list--corner u-mb-32">
-                    <li class="c-list__item">Total : <span>4</span></li>
-                    <li class="c-list__item">Soigné(s) : <span>3</span></li>
-                    <li class="c-list__item">Décédé(s) : <span>1</span></li>
-                    <li class="c-list__item">
-                        Zone la plus endommagée: <span>Bras droit (2)</span>
-                    </li>
-                    <li class="c-list__item">
-                        Blessure la plus courante : <span>Hémoragie (2)</span>
-                    </li>
-                    <li class="c-list__item">Avec protection ballistique : <span>0</span></li>
-                </ul>
-            </div>
+            <ul class="c-list c-list--corner u-mb-32">
+                <li class="c-list__item">Total : <span>4</span></li>
+                <li class="c-list__item">Soigné(s) : <span>3</span></li>
+                <li class="c-list__item">Décédé(s) : <span>1</span></li>
+                <li class="c-list__item">Zone la plus endommagée: <span>Bras droit (2)</span></li>
+                <li class="c-list__item">Blessure la plus courante : <span>Hémoragie (2)</span></li>
+                <li class="c-list__item">Avec protection ballistique : <span>0</span></li>
+            </ul>
         </div>
         <div class="c-grid__tile">
             <ul class="c-patientList">
                 {% for item in items %}
-                    <li class="c-patientList__item">
-                        <div class="c-patient">
-                            <span class="c-patient__order">{{ item.order }}</span>
-                            <h2 class="c-patient__title">#ID{{ item.id }} - {{ item.time }}</h2>
-                            <div class="c-patient__injury">
+                    <li class="c-patientList__item ">
+                        <div class="c-patient {% if item.dead %}c-patient--dead{% endif %}">
+                            <div class="c-patient__content">
+                                <span class="c-patient__order">{{ item.order }}</span>
+                                <h2 class="c-patient__title">#ID{{ item.id }} - {{ item.time }}</h2>
                                 <div class="c-patient__injury">
-                                    <p>Date : 21/10/2025</p>
-                                    <p>Status : Décédé ☠️</p>
-                                    <p>Zone : {{ item.local }}</p>
-                                    <p>
-                                        Protection ballistique :
-                                        {% if item.protection %}Oui{% else %}Non{% endif %}
-                                    </p>
-                                    <p>Blessure : {{ item.injury }}</p>
+                                    <div class="c-patient__injury">
+                                        <p>Date : 21/10/2025</p>
+                                        <p>
+                                            Status :
+                                            {% if item.dead %}Décédé ☠️{% else %}Soigné{% endif %}
+                                        </p>
+                                        <p>Zone : {{ item.local }}</p>
+                                        <p>
+                                            Protection ballistique :
+                                            {% if item.protection %}Oui{% else %}Non{% endif %}
+                                        </p>
+                                        <p>Blessure : {{ item.injury }}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

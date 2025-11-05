@@ -8,6 +8,10 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+
+    @media (orientation: portrait) {
+        height: calc((100dvh - (var(--contentPadding) * 2)) - var(--headerSize));
+    }
 }
 
 // Steps
@@ -23,8 +27,11 @@
     justify-content: center;
     flex: 1;
     padding: 1rem;
-    //transition: 200ms ease-in-out;
     height: 6rem;
+
+    [class*='c-icon'] {
+        --iconSize: 3.2rem;
+    }
 
     &:not(.active) {
         @include corner(1.2);
@@ -39,8 +46,13 @@
         color: black;
         opacity: 0.6;
         position: relative;
+        [class*='c-icon'] {
+            &:before {
+                background-color: var(--primary);
+            }
+        }
 
-        &:after {
+        /*&:after {
             content: '';
             display: block;
             width: 2rem;
@@ -51,7 +63,7 @@
             background-repeat: no-repeat;
             background-color: var(--primary);
             border-radius: 2rem;
-        }
+        }*/
     }
 }
 
@@ -89,13 +101,20 @@
         grid-template-rows: 2fr 1fr;
     }
 
+    @media (orientation: portrait) {
+        display: grid;
+        grid-auto-rows: fit-content;
+        grid-template-rows: 2fr 1fr;
+        height: 100%;
+    }
+
     &:not(.active) {
         display: none;
     }
 }
 
 .c-injuryTreat__title {
-    padding: 1.6rem 3.2rem;
+    padding: 1.6rem 2.4rem;
     position: relative;
     display: flex;
     gap: 1.6rem;

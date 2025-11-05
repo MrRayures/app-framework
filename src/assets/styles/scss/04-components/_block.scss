@@ -7,6 +7,9 @@
     @include corner(1.2);
 }
 
+/*
+* Icon
+*/
 .c-blockIcon {
     display: flex;
     align-items: flex-start;
@@ -32,6 +35,9 @@
     }
 }
 
+/*
+* Corner
+*/
 .c-blockCorner {
     display: flex;
     flex-direction: column;
@@ -48,5 +54,21 @@
 
     [class*='c-icon-'] {
         --iconSize: 9.6rem;
+    }
+
+    .c-grid__tile & {
+        height: 100%;
+    }
+}
+
+.c-blockCorner--injury {
+    @media (orientation: portrait) {
+        gap: 1.6rem;
+        flex-direction: row;
+        text-align: left;
+
+        [class*='c-icon-'] {
+            --iconSize: 8rem;
+        }
     }
 }

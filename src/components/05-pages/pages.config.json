@@ -8,10 +8,10 @@
         "filePath": "/components/detail/",
         "list": [
             {
-                "label": "Exemple",
+                "label": "echomike",
                 "folder": false,
                 "id": "ex",
-                "fileName": "exemple"
+                "fileName": "landing"
             },
             {
                 "label": "APP medic",
@@ -26,6 +26,7 @@
                     { "label": "Options", "fileName": "app-settings" },
 
                     { "label": "Partie : start", "fileName": "game-start" },
+                    { "label": "Partie : start NFC", "fileName": "game-start-nfc" },
                     { "label": "Partie : options", "fileName": "game-settings" },
                     { "label": "Partie : stats", "fileName": "game-stats" },
 
@@ -39,6 +40,12 @@
                     { "label": "Partie : soin", "fileName": "game-injury-treat" },
                     { "label": "Partie : terminé", "fileName": "game-end" }
                 ]
+            },
+            {
+                "label": "APP Engineer",
+                "folder": true,
+                "id": "medic",
+                "list": []
             }
         ]
     }
